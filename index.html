@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohsin Ali Syed - Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 20px 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 0 auto;
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .about-text h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-left: 4px solid #667eea;
+            margin-top: 2rem;
+            border-radius: 5px;
+        }
+
+        .value-prop h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Artifacts Section */
+        .artifacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .artifact-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .artifact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .artifact-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .artifact-card .objective {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .artifact-card .process {
+            margin-bottom: 1rem;
+        }
+
+        .artifact-card .tools {
+            background: #f8f9fa;
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .artifact-card .value {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        #contact h2 {
+            color: white;
+        }
+
+        .contact-info {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .artifacts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Mohsin Ali Syed</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#artifacts">Artifacts</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Mohsin Ali Syed</h1>
+        <p>AI & Machine Learning Professional | Problem Solver | Continuous Learner</p>
+        <a href="#artifacts" class="btn">View My Work</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="profile-image">MAS</div>
+                <div class="about-text">
+                    <h3>Professional Bio</h3>
+                    <p>
+                        Welcome to my professional portfolio! I am Mohsin Ali Syed, a passionate learner and aspiring professional 
+                        in the field of Artificial Intelligence and Machine Learning. I am currently developing my expertise through 
+                        hands-on projects and continuous learning, focusing on applying AI/ML concepts to solve real-world challenges.
+                    </p>
+                    <p>
+                        My journey in this cutting-edge field is driven by curiosity and a commitment to understanding complex 
+                        technologies. I believe in the power of AI and ML to transform industries and create meaningful impact.
+                    </p>
+                    
+                    <div class="value-prop">
+                        <h4>Personal Value Proposition</h4>
+                        <p>
+                            I bring a unique combination of technical aptitude, creative problem-solving, and a learner's mindset 
+                            to the field of AI and Machine Learning. My ability to break down complex concepts and apply them to 
+                            practical scenarios, combined with my commitment to continuous growth, positions me to contribute 
+                            valuable insights and innovative solutions to any team or project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artifacts Section -->
+    <section id="artifacts">
+        <div class="container">
+            <h2>My Portfolio Artifacts</h2>
+            <div class="artifacts-grid">
+                <!-- Artifact 1 - Placeholder -->
+                <div class="artifact-card">
+                    <h3>Artifact 1: [Your First Artifact Title]</h3>
+                    <p class="objective"><strong>Objective:</strong> Brief description of why you created this artifact.</p>
+                    <p class="process"><strong>Process:</strong> Describe how you created this artifact and what steps you took.</p>
+                    <p class="tools"><strong>Tools Used:</strong> List the tools and technologies you used (e.g., Python, TensorFlow, Google Sites).</p>
+                    <p class="value"><strong>Value Proposition:</strong> Explain why this artifact is important and what skills it demonstrates.</p>
+                </div>
+
+                <!-- Placeholder for future artifacts -->
+                <div class="artifact-card" style="opacity: 0.5;">
+                    <h3>Artifact 2: Coming Soon</h3>
+                    <p>Future artifact will be added here as you progress through the course.</p>
+                </div>
+
+                <div class="artifact-card" style="opacity: 0.5;">
+                    <h3>Artifact 3: Coming Soon</h3>
+                    <p>Future artifact will be added here as you progress through the course.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>I'm always interested in connecting with fellow learners and professionals in the AI/ML field.</p>
+                <p>Email: <a href="mailto:mohsinali.syed@myemail.indwes.edu">mohsinali.syed@myemail.indwes.edu</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mohsin Ali Syed. Professional Portfolio for AI & Machine Learning Course.</p>
+    </footer>
+</body>
+</html>
