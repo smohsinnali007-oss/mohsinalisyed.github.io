@@ -3,286 +3,520 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohsin Ali Syed - Professional Portfolio</title>
+    <title>Mohsin Ali Syed - AI/ML Professional Portfolio</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-dark: #0a192f;
+            --secondary-dark: #112240;
+            --teal: #00d4aa;
+            --coral: #ff6b6b;
+            --light-slate: #a8b2d1;
+            --lightest-slate: #ccd6f6;
+            --white: #e6f1ff;
+            --accent-gradient: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--light-slate);
+            background: var(--primary-dark);
+            overflow-x: hidden;
         }
 
         /* Navigation */
         nav {
-            background: #2c3e50;
-            color: white;
-            padding: 1rem 0;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(0, 212, 170, 0.1);
         }
 
         nav .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
         }
 
         nav a {
-            color: white;
+            color: var(--lightest-slate);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--teal);
+            transition: width 0.3s ease;
         }
 
         nav a:hover {
-            color: #3498db;
+            color: var(--teal);
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 150px 20px 100px;
+            background: linear-gradient(135deg, #0a192f 0%, #112240 50%, #1a3a52 100%);
+            color: var(--white);
+            padding: 200px 40px 150px;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero .intro {
+            color: var(--teal);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+            letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+            background: linear-gradient(135deg, var(--white) 0%, var(--teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            font-weight: 900;
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s backwards;
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+            color: var(--light-slate);
+            font-weight: 300;
         }
 
-        .hero .btn {
+        .hero .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: white;
-            color: #667eea;
+            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s;
-            animation: fadeInUp 1s ease 0.4s backwards;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero .btn:hover {
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+        }
+
+        .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 25px rgba(0, 212, 170, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--teal);
+            border: 2px solid var(--teal);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 212, 170, 0.1);
+            transform: translateY(-3px);
         }
 
         /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
         /* Section Styles */
         section {
-            padding: 80px 20px;
+            padding: 120px 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            color: var(--teal);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
 
         section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--lightest-slate);
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .section-subtitle {
+            color: var(--light-slate);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
         }
 
         /* About Section */
+        #about {
+            background: var(--secondary-dark);
+        }
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
+            gap: 5rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-section {
+            position: sticky;
+            top: 150px;
         }
 
         .profile-image {
             width: 100%;
-            max-width: 300px;
-            border-radius: 50%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin: 0 auto;
-            display: block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            max-width: 350px;
             aspect-ratio: 1/1;
+            border-radius: 20px;
+            background: var(--accent-gradient);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 4rem;
-            font-weight: bold;
+            color: var(--primary-dark);
+            font-size: 5rem;
+            font-weight: 900;
+            box-shadow: 
+                0 20px 60px rgba(0, 212, 170, 0.3),
+                inset 0 -5px 20px rgba(0, 0, 0, 0.2);
+            margin: 0 auto 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         .about-text h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
+            color: var(--lightest-slate);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
         }
 
         .about-text p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--light-slate);
         }
 
-        /* Value Proposition */
         .value-prop {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-left: 4px solid #667eea;
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.1) 0%, rgba(0, 168, 204, 0.1) 100%);
+            padding: 2.5rem;
+            border-left: 4px solid var(--teal);
             margin-top: 2rem;
-            border-radius: 5px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
         }
 
         .value-prop h4 {
-            color: #2c3e50;
+            color: var(--teal);
             margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .value-prop p {
+            color: var(--lightest-slate);
         }
 
         /* Artifacts Section */
         .artifacts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .artifact-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--secondary-dark);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 212, 170, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .artifact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .artifact-card:hover::before {
+            transform: scaleX(1);
         }
 
         .artifact-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 60px rgba(0, 212, 170, 0.2);
+            border-color: var(--teal);
         }
 
         .artifact-card h3 {
-            color: #667eea;
+            color: var(--teal);
             margin-bottom: 1rem;
-        }
-
-        .artifact-card .objective {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .artifact-card .process {
-            margin-bottom: 1rem;
-        }
-
-        .artifact-card .tools {
-            background: #f8f9fa;
-            padding: 0.5rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .artifact-card .value {
-            color: #2c3e50;
-            font-weight: 500;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .artifact-card .intro {
             font-size: 1.05rem;
-            color: #555;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #e0e0e0;
+            color: var(--lightest-slate);
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.7;
         }
 
-        .artifact-card .description {
-            margin-bottom: 1rem;
+        .artifact-card .objective,
+        .artifact-card .description,
+        .artifact-card .process {
+            margin-bottom: 1.5rem;
+            color: var(--light-slate);
+            line-height: 1.7;
+        }
+
+        .artifact-card strong {
+            color: var(--lightest-slate);
+            font-weight: 600;
+        }
+
+        .artifact-card .tools {
+            background: rgba(0, 212, 170, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            border-left: 3px solid var(--teal);
         }
 
         .artifact-card .value-section {
-            background: #f0f4ff;
-            padding: 1rem;
-            border-radius: 5px;
-            margin: 1rem 0;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 107, 107, 0.05) 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 107, 107, 0.2);
         }
 
         .artifact-card .value-section p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--light-slate);
         }
 
         .artifact-card .references {
             font-size: 0.9rem;
-            color: #666;
+            color: var(--light-slate);
             font-style: italic;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .artifact-card.coming-soon {
+            opacity: 0.4;
+            pointer-events: none;
         }
 
         /* Contact Section */
         #contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: var(--secondary-dark);
+            position: relative;
+            overflow: hidden;
         }
 
-        #contact h2 {
-            color: white;
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(0, 212, 170, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255, 107, 107, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--light-slate);
         }
 
         .contact-info {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
         .contact-info a {
-            color: white;
+            color: var(--teal);
             text-decoration: none;
-            border-bottom: 2px solid white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--coral);
+            transform: translateX(10px);
         }
 
         /* Footer */
         footer {
-            background: #2c3e50;
-            color: white;
+            background: var(--primary-dark);
+            color: var(--light-slate);
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
+            border-top: 1px solid rgba(0, 212, 170, 0.1);
         }
 
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -291,22 +525,61 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
+        @media (max-width: 968px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 3.5rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .profile-section {
+                position: relative;
+                top: 0;
             }
 
             .artifacts-grid {
                 grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            section h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero .cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 150px 20px 100px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            nav .container,
+            .container,
+            section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .artifact-card {
+                padding: 2rem;
             }
         }
     </style>
@@ -315,11 +588,11 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">Mohsin Ali Syed</div>
+            <div class="logo">MAS</div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#artifacts">Artifacts</a></li>
+                <li><a href="#artifacts">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -327,17 +600,29 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h1>Mohsin Ali Syed</h1>
-        <p>AI & Machine Learning Professional | Problem Solver | Continuous Learner</p>
-        <a href="#artifacts" class="btn">View My Work</a>
+        <div class="hero-content">
+            <div class="intro">Welcome to My Portfolio</div>
+            <h1>Mohsin Ali Syed</h1>
+            <p class="tagline">AI & Machine Learning Professional | Problem Solver | Continuous Learner</p>
+            <div class="cta-buttons">
+                <a href="#artifacts" class="btn btn-primary">Explore My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2>About Me</h2>
+            <div class="section-header">
+                <div class="section-label">Get to Know Me</div>
+                <h2>About Me</h2>
+                <p class="section-subtitle">Passionate about leveraging AI and Machine Learning to solve real-world challenges</p>
+            </div>
             <div class="about-content">
-                <div class="profile-image">MAS</div>
+                <div class="profile-section">
+                    <div class="profile-image">MAS</div>
+                </div>
                 <div class="about-text">
                     <h3>Professional Bio</h3>
                     <p>
@@ -367,9 +652,13 @@
     <!-- Artifacts Section -->
     <section id="artifacts">
         <div class="container">
-            <h2>My Portfolio Artifacts</h2>
+            <div class="section-header">
+                <div class="section-label">My Work</div>
+                <h2>Portfolio Artifacts</h2>
+                <p class="section-subtitle">A curated collection of projects demonstrating my AI/ML capabilities</p>
+            </div>
             <div class="artifacts-grid">
-                <!-- Artifact 1 - Example: AI/ML Timeline -->
+                <!-- Artifact 1 -->
                 <div class="artifact-card">
                     <h3>Artifact 1: AI & ML Historical Timeline</h3>
                     <p class="intro">An interactive exploration of key milestones in artificial intelligence and machine learning development.</p>
@@ -389,56 +678,60 @@
                     <p class="references"><strong>References:</strong> [Add your sources here]</p>
                 </div>
 
-                <!-- Artifact 2 - AI Lab Experience -->
-<div class="artifact-card">
-    <h3>Artifact 2: My First AI Lab Experience - A Beginner's Journey</h3>
-    <p class="intro">A detailed documentation of my hands-on journey learning to work with generative AI tools, including experiments with prompt engineering and practical applications.</p>
-    
-    <p class="objective"><strong>Objective:</strong> To demonstrate my ability to learn new AI technologies independently, experiment with different approaches, and document technical processes in a way that helps other learners succeed.</p>
-    
-    <p class="description"><strong>Description:</strong> This artifact includes step-by-step documentation of my AI Lab exercises, featuring screenshots of successful prompts, examples of failed attempts and what I learned from them, and a beginner's guide to effective prompt engineering. It covers working with ChatGPT, Claude, and exploring various AI capabilities through hands-on experimentation.</p>
-    
-    <p class="process"><strong>Process:</strong> I worked through structured AI Lab exercises provided in Workshop 1, testing over 20 different prompt variations to understand what makes prompts effective. I documented my results with screenshots, analyzed patterns in successful versus unsuccessful prompts, identified common beginner mistakes, experimented with different conversation styles and prompt structures, and compiled my lessons learned into an accessible guide that other AI newcomers could follow to accelerate their learning.</p>
-    
-    <p class="tools"><strong>Tools & Technologies:</strong> ChatGPT (GPT-4), Claude AI (Sonnet), various generative AI platforms, Google Docs for documentation, screenshot tools, Markdown for formatting</p>
-    
-    <div class="value-section">
-        <p><strong>Value Proposition:</strong></p>
-        <p><strong>Unique Value:</strong> This artifact showcases my hands-on technical ability, self-directed learning approach, and skill in creating clear technical documentation. It demonstrates that I can not only use AI tools effectively but also explain complex concepts to others in accessible ways—a critical skill for any tech professional.</p>
-        <p><strong>Relevance:</strong> Technical communication and documentation skills are highly valued in AI/ML careers. This artifact proves I can work with cutting-edge AI technologies, learn through experimentation, and translate technical experiences into knowledge that benefits others.</p>
-    </div>
-    
-    <p class="references"><strong>References:</strong> OpenAI ChatGPT documentation, Anthropic Claude user guides, Workshop 1 AI Lab materials and exercises, prompt engineering best practices from various online resources</p>
-</div>
-                <!-- Placeholder for future artifacts -->
+                <!-- Artifact 2 -->
                 <div class="artifact-card">
-    <h3>Artifact 3: My AI/ML Professional Development Journey</h3>
-    <p class="intro">A reflective analysis of my current competencies in AI/ML and a strategic plan for continued professional growth, demonstrating self-awareness and commitment to lifelong learning.</p>
-    
-    <p class="objective"><strong>Objective:</strong> To critically evaluate my strengths and areas for improvement in AI/ML, create an actionable development plan, and showcase my ability to take ownership of my professional growth—a key trait that employers highly value.</p>
-    
-    <p class="description"><strong>Description:</strong> This artifact presents a comprehensive self-assessment covering technical skills, soft skills, industry knowledge, and learning strategies. It includes a SWOT analysis, specific goals with timelines, and a curated list of resources for continued learning.</p>
-    
-    <p class="process"><strong>Process:</strong> I completed structured self-assessment exercises using frameworks from the professional assessment workshop. I identified skill gaps by analyzing actual job postings for AI/ML roles. I sought feedback from peers and instructors on my learning progress. I researched various career pathways in AI/ML and created both a 6-month and 1-year development plan with specific, measurable milestones.</p>
-    
-    <p class="tools"><strong>Tools & Technologies:</strong> Self-assessment frameworks, career research platforms (LinkedIn, Glassdoor), skill mapping tools, goal-setting templates, GenAI tools (ChatGPT and Claude) for career guidance</p>
-    
-    <div class="value-section">
-        <p><strong>Value Proposition:</strong></p>
-        <p><strong>Unique Value:</strong> This artifact demonstrates metacognition—the ability to reflect on my own learning and take deliberate steps toward improvement. It shows emotional intelligence, strategic thinking, and a growth mindset that distinguishes exceptional professionals from average ones.</p>
-        <p><strong>Relevance:</strong> Employers in AI and machine learning actively seek candidates who can self-direct their learning and adapt to this rapidly evolving field. This artifact proves I actively seek growth opportunities and take responsibility for staying current in this fast-evolving industry.</p>
-    </div>
-    
-    <p class="references"><strong>References:</strong> Professional development frameworks from Workshop materials, AI/ML career pathway research from LinkedIn and industry reports, skill requirement analysis from job postings, feedback from course workshops</p>
-</div>
-                <div class="artifact-card" style="opacity: 0.5;">
-                    <h3>Artifact 4: Coming Soon</h3>
-                    <p>Future artifact will be added here as you progress through the course.</p>
+                    <h3>Artifact 2: My First AI Lab Experience</h3>
+                    <p class="intro">A detailed documentation of my hands-on journey learning to work with generative AI tools, including experiments with prompt engineering and practical applications.</p>
+                    
+                    <p class="objective"><strong>Objective:</strong> To demonstrate my ability to learn new AI technologies independently, experiment with different approaches, and document technical processes in a way that helps other learners succeed.</p>
+                    
+                    <p class="description"><strong>Description:</strong> This artifact includes step-by-step documentation of my AI Lab exercises, featuring screenshots of successful prompts, examples of failed attempts and what I learned from them, and a beginner's guide to effective prompt engineering.</p>
+                    
+                    <p class="process"><strong>Process:</strong> I worked through structured AI Lab exercises, testing over 20 different prompt variations to understand what makes prompts effective. I documented results with screenshots, analyzed patterns, and compiled lessons learned into an accessible guide.</p>
+                    
+                    <p class="tools"><strong>Tools & Technologies:</strong> ChatGPT (GPT-4), Claude AI (Sonnet), Google Docs, Markdown formatting</p>
+                    
+                    <div class="value-section">
+                        <p><strong>Value Proposition:</strong></p>
+                        <p><strong>Unique Value:</strong> This artifact showcases my hands-on technical ability, self-directed learning approach, and skill in creating clear technical documentation.</p>
+                        <p><strong>Relevance:</strong> Technical communication and documentation skills are highly valued in AI/ML careers.</p>
+                    </div>
+                    
+                    <p class="references"><strong>References:</strong> OpenAI ChatGPT documentation, Anthropic Claude user guides, Workshop 1 AI Lab materials</p>
                 </div>
 
-                <div class="artifact-card" style="opacity: 0.5;">
+                <!-- Artifact 3 -->
+                <div class="artifact-card">
+                    <h3>Artifact 3: Professional Development Journey</h3>
+                    <p class="intro">A reflective analysis of my current competencies in AI/ML and a strategic plan for continued professional growth.</p>
+                    
+                    <p class="objective"><strong>Objective:</strong> To critically evaluate my strengths and areas for improvement in AI/ML, create an actionable development plan, and showcase my ability to take ownership of my professional growth.</p>
+                    
+                    <p class="description"><strong>Description:</strong> This artifact presents a comprehensive self-assessment covering technical skills, soft skills, industry knowledge, and learning strategies. It includes a SWOT analysis, specific goals with timelines, and curated resources for continued learning.</p>
+                    
+                    <p class="process"><strong>Process:</strong> I completed structured self-assessment exercises, identified skill gaps by analyzing job postings, sought feedback from peers and instructors, and created both 6-month and 1-year development plans with measurable milestones.</p>
+                    
+                    <p class="tools"><strong>Tools & Technologies:</strong> Self-assessment frameworks, career research platforms (LinkedIn, Glassdoor), goal-setting templates, GenAI tools for career guidance</p>
+                    
+                    <div class="value-section">
+                        <p><strong>Value Proposition:</strong></p>
+                        <p><strong>Unique Value:</strong> This artifact demonstrates metacognition—the ability to reflect on my own learning and take deliberate steps toward improvement.</p>
+                        <p><strong>Relevance:</strong> Employers in AI/ML actively seek candidates who can self-direct their learning and adapt to this rapidly evolving field.</p>
+                    </div>
+                    
+                    <p class="references"><strong>References:</strong> Professional development frameworks from Workshop materials, AI/ML career pathway research, job posting analysis</p>
+                </div>
+
+                <!-- Artifact 4 - Placeholder -->
+                <div class="artifact-card coming-soon">
+                    <h3>Artifact 4: Coming Soon</h3>
+                    <p>This artifact will showcase another dimension of my AI/ML capabilities and will be added upon completion.</p>
+                </div>
+
+                <!-- Artifact 5 - Placeholder -->
+                <div class="artifact-card coming-soon">
                     <h3>Artifact 5: Coming Soon</h3>
-                    <p>Future artifact will be added here as you progress through the course.</p>
+                    <p>Future artifact will be added here as I progress through the course.</p>
                 </div>
             </div>
         </div>
@@ -447,11 +740,16 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-info">
-                <p>I'm always interested in connecting with fellow learners and professionals in the AI/ML field.</p>
-                <p>Email: <a href="mailto:Mohsin.syed@portfolio.com">Mohsin Syed</a></p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/Mohsin</a></p>
+            <div class="section-header">
+                <div class="section-label">Let's Connect</div>
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <p>I'm always interested in connecting with fellow learners and professionals in the AI/ML field. Let's discuss opportunities, collaborations, or just chat about the latest in AI!</p>
+                <div class="contact-info">
+                    <a href="mailto:Mohsin.syed@portfolio.com">📧 Mohsin.syed@portfolio.com</a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank">💼 linkedin.com/in/Mohsin</a>
+                </div>
             </div>
         </div>
     </section>
