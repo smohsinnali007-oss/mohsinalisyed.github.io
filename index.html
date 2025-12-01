@@ -1,47 +1,497 @@
-<div class="artifact-card">
-    <h3>Artifact 4: AI/ML Industry Application Analysis</h3>
-    <p class="intro">A comprehensive analysis of how AI and machine learning are transforming healthcare, finance, retail, and manufacturing industries through real-world implementations and measurable business outcomes.</p>
-    
-    <p class="objective"><strong>Objective:</strong> To research and analyze current AI/ML applications across different industries, understand their business value proposition, identify implementation challenges, and recognize emerging trends that will shape the future of AI adoption in enterprise environments.</p>
-    
-    <p class="description"><strong>Description:</strong> This artifact presents an in-depth examination of AI/ML implementations across four major sectors. Through analysis of 15+ real-world case studies, 40+ industry reports, and insights from leading AI practitioners, I've documented how organizations achieve 25-40% operational efficiency improvements with AI. The analysis includes detailed case studies from PathAI (healthcare diagnostics), JPMorgan Chase (contract intelligence), and Siemens (predictive maintenance), showcasing measurable ROI and implementation strategies.</p>
-    
-    <p><strong>Key Findings:</strong></p>
-    <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: var(--light-slate);">
-        <li><strong>Healthcare:</strong> AI-powered diagnostic tools achieve 94-96% accuracy rates, reducing diagnostic time by up to 60%</li>
-        <li><strong>Finance:</strong> ML fraud detection reduces false positives by 70% while identifying 95% of fraudulent transactions</li>
-        <li><strong>Retail:</strong> AI recommendation engines drive 35% of major e-commerce revenue and increase conversions by 20-30%</li>
-        <li><strong>Manufacturing:</strong> Predictive maintenance reduces downtime by 30-50% and maintenance costs by 20-40%</li>
-    </ul>
-    
-    <p class="process"><strong>Research Process:</strong> I employed a multi-faceted research methodology including:</p>
-    <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: var(--light-slate);">
-        <li>Literature review of 40+ industry reports from McKinsey, Gartner, Deloitte, and PwC</li>
-        <li>Academic research analysis from MIT AI Lab, Stanford HAI, and peer-reviewed journals</li>
-        <li>Deep-dive case study analysis of 15+ successful AI implementations</li>
-        <li>Synthesis of insights from 20+ AI practitioner interviews and conference presentations</li>
-        <li>Competitive analysis comparing AI adoption rates and strategies across sectors</li>
-    </ul>
-    
-    <div style="background: rgba(0, 212, 170, 0.05); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border-left: 3px solid var(--teal);">
-        <p style="margin: 0;"><strong>Featured Case Study - JPMorgan Chase COIN:</strong> Natural language processing system that reviews 12,000 commercial credit agreements in seconds—a task that previously required 360,000 hours of lawyer time annually. Result: Massive cost savings, improved accuracy, and legal teams freed for strategic work.</p>
-    </div>
-    
-    <p class="tools"><strong>Tools & Technologies:</strong> Google Scholar, IEEE Xplore, ArXiv (research databases); McKinsey AI Insights, Gartner Magic Quadrant, Deloitte State of AI (industry reports); Canva (data visualization); ChatGPT, Claude, Perplexity AI (research assistance); Google Sheets (data analysis)</p>
-    
-    <div class="value-section">
-        <p><strong>Value Proposition:</strong></p>
-        <p><strong>Unique Value:</strong> This artifact demonstrates my ability to bridge technical AI/ML knowledge with business strategy and industry context. I can:</p>
-        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-            <li>Translate complex AI concepts into business value propositions for stakeholders</li>
-            <li>Conduct rigorous research synthesizing insights from multiple authoritative sources</li>
-            <li>Think strategically about how AI creates competitive advantage beyond just algorithms</li>
-            <li>Identify cross-industry implementation patterns and emerging opportunities</li>
-            <li>Communicate technical findings in accessible formats for diverse audiences</li>
-        </ul>
-        <p><strong>Relevance:</strong> Employers need AI professionals who understand ROI, implementation challenges, and strategic value—not just technical capabilities. This analysis proves I can communicate AI's value to non-technical stakeholders, understand sector-specific applications, and learn from both successes and failures. These skills are consistently cited as critical gaps in the AI industry.</p>
-        <p><strong>Career Application:</strong> This research positions me to contribute meaningfully in roles such as AI Product Manager, ML Implementation Consultant, AI Strategy Analyst, or Technical Business Analyst in AI-forward companies.</p>
-    </div>
-    
-    <p class="references"><strong>References:</strong> McKinsey Global Institute "The State of AI in 2023"; Gartner "AI and Machine Learning Magic Quadrant 2024"; Deloitte "State of AI in the Enterprise, 5th Edition"; Stanford HAI Annual AI Index Report; MIT Sloan "Winning With AI" research series; PathAI FDA submissions; JPMorgan Chase corporate blog; Siemens Industry 4.0 whitepapers; Andrew Ng AI Fund publications; Harvard Business Review AI case studies</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohsin Ali Syed | AI/ML Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 2rem 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero .cta {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        
+        .hero .cta:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #667eea;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            margin: 0 auto;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Skills Section */
+        #skills {
+            background: #f8f9fa;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Projects Section */
+        .project-card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: #e7e9fc;
+            color: #667eea;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .project-highlights {
+            margin-top: 1rem;
+        }
+        
+        .project-highlights li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        #contact h2 {
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">MAS</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Mohsin Ali Syed</h1>
+            <p class="subtitle">AI/ML Enthusiast | Data Analyst | Business Intelligence Professional</p>
+            <a href="#contact" class="cta">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="profile-image">MS</div>
+                <div class="about-text">
+                    <p>Hello! I'm Mohsin Ali Syed, a passionate AI/ML professional with a strong foundation in data analysis and business intelligence. I specialize in bridging the gap between technical AI capabilities and business strategy, helping organizations understand and implement AI solutions that deliver measurable ROI.</p>
+                    <p>With expertise in machine learning, data analysis, and industry research, I've developed a unique ability to translate complex AI concepts into actionable business insights. My work spans across healthcare, finance, retail, and manufacturing sectors, where I analyze real-world AI implementations and their business impact.</p>
+                    <p>I'm committed to continuous learning and staying at the forefront of AI innovation, always seeking opportunities to apply cutting-edge technologies to solve real-world business challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>AI/ML Technologies</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision</li>
+                        <li>Predictive Analytics</li>
+                        <li>Deep Learning</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data & Analytics</h3>
+                    <ul>
+                        <li>Data Analysis</li>
+                        <li>Business Intelligence</li>
+                        <li>Statistical Modeling</li>
+                        <li>Data Visualization</li>
+                        <li>Google Sheets/Excel</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Research Tools</h3>
+                    <ul>
+                        <li>Google Scholar</li>
+                        <li>IEEE Xplore</li>
+                        <li>ArXiv</li>
+                        <li>McKinsey AI Insights</li>
+                        <li>Gartner Research</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>AI Tools</h3>
+                    <ul>
+                        <li>ChatGPT</li>
+                        <li>Claude AI</li>
+                        <li>Perplexity AI</li>
+                        <li>Canva (Design)</li>
+                        <li>TensorFlow/PyTorch</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            
+            <div class="project-card">
+                <h3>AI/ML Industry Transformation Analysis</h3>
+                <div class="project-meta">
+                    <span class="tag">Research</span>
+                    <span class="tag">AI/ML</span>
+                    <span class="tag">Business Strategy</span>
+                </div>
+                <p><strong>Objective:</strong> Comprehensive research and analysis of AI/ML applications across healthcare, finance, retail, and manufacturing industries.</p>
+                
+                <p><strong>Description:</strong> Conducted in-depth examination of AI/ML implementations across four major sectors through analysis of 15+ real-world case studies and 40+ industry reports. Documented how organizations achieve 25-40% operational efficiency improvements with AI.</p>
+                
+                <div class="project-highlights">
+                    <strong>Key Achievements:</strong>
+                    <ul>
+                        <li>Analyzed PathAI's healthcare diagnostics system improving cancer detection accuracy</li>
+                        <li>Studied JPMorgan Chase COIN platform processing 12,000 contracts (360,000 lawyer hours saved annually)</li>
+                        <li>Examined Siemens predictive maintenance reducing equipment downtime by 30%</li>
+                        <li>Researched Amazon's recommendation engine driving 35% of revenue</li>
+                        <li>Identified key implementation challenges and ROI metrics across industries</li>
+                    </ul>
+                </div>
+                
+                <p><strong>Tools Used:</strong> Google Scholar, IEEE Xplore, ArXiv, McKinsey AI Insights, Gartner Magic Quadrant, Canva, ChatGPT, Claude AI, Google Sheets</p>
+                
+                <p><strong>Business Impact:</strong> This research demonstrates ability to bridge technical AI knowledge with business strategy, communicate AI value to non-technical stakeholders, and understand sector-specific applications.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Additional Projects</h3>
+                <p style="color: #666; font-style: italic;">More projects coming soon! Currently working on machine learning models and data visualization dashboards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div>📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:mohsinali@example.com">mohsinali@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <div>💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/mohsinalisyed" target="_blank">linkedin.com/in/mohsinalisyed</a>
+                </div>
+                <div class="contact-item">
+                    <div>🐙</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/smohsinnali007-oss" target="_blank">github.com/smohsinnali007-oss</a>
+                </div>
+                <div class="contact-item">
+                    <div>📄</div>
+                    <h3>Resume</h3>
+                    <a href="#" onclick="alert('Add your resume PDF link here'); return false;">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mohsin Ali Syed. All rights reserved.</p>
+        <p>Passionate about AI/ML | Building the Future with Data</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 1s ease';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
